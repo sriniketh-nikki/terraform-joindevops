@@ -5,39 +5,39 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-    #default = "t3.micro"
+  #default = "t3.micro"
 }
 
 variable "ec2_tags" {
-    type = map
-    default = {
-        Project = "expense"
-        Component = "backend"
-        Environment = "dev"
-        Name = "expense-backend-dev"
-    }
+  type = map(any)
+  default = {
+    Project     = "expense"
+    Component   = "backend"
+    Environment = "dev"
+    Name        = "expense-backend-dev"
+  }
 }
 
 variable "from_port" {
-    type = number
-    default = 22
+  type    = number
+  default = 22
 }
 
 variable "to_port" {
-    type = number
-    default = 22
+  type    = number
+  default = 22
 }
 
 variable "cidr_blocks" {
-    type = list(string)
-    default = ["0.0.0.0/0"]
+  type    = list(string)
+  default = ["0.0.0.0/0"]
 }
 
 variable "sg_tags" {
-    type = map
-    default = {
-        Name = "expense-backend-dev"
-    }
+  type = map(any)
+  default = {
+    Name = "expense-backend-dev"
+  }
 }
 /* 
 1. command line --> -var "<var-name>=<var-value>"
